@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.fullscreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+#console {
+  background-image: url("/images/console-background.jpg");
+  background-repeat: repeat;
+  padding: 2px;
+  border: 2px solid #000;
+  font-family: "Courier New";
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media all and (orientation:portrait) {
+  .oriented-console {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .console__left-column {
+    float: left;
+    width: 45%;
+    margin-left: 5px;
+    overflow: hidden;
+  }
+
+  .console__right-column {
+    float: right;
+    width: 45%;
+    margin-right: 5px;
+    overflow: hidden;
+  }
+}
+
+@media all and (orientation:landscape) {
+  #console {
+    padding: 10px;
+  }
+
+  .oriented-console {
+    position: fixed;
+    width: 30%;
+    max-width: 300px;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media all and (orientation:landscape) and (max-device-width: 720px) {
+  #console {
+    padding: 3px;
+    font-size: 10px;
+    max-width: 125px;
+  }
+
+  .oriented-console {
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.console__player {
+  width: 100%;
+  clear: both;
+}
+.console__player-name {
+  float: left;
+}
+
+.console__player-score {
+  float: right;
+}
